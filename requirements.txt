@@ -1,4 +1,11 @@
-streamlit
+fastapi
+uvicorn[standard]
+python-dotenv
+huggingface_hub
+pillow
 torch
 transformers
 accelerate
+pytest
+httpx
+python-multipart
