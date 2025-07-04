@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+load_dotenv() 
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.responses import StreamingResponse
 from .schemas import ImageRequest
