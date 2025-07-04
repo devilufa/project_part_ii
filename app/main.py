@@ -1,10 +1,8 @@
-from dotenv import load_dotenv
-load_dotenv() 
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
-from .schemas import ImageRequest
-from .utils import generate_image
-import os
+from app.schemas import ImageRequest  # Абсолютный импорт
+from app.utils import generate_image   # Абсолютный импорт
+import io
 
 app = FastAPI(
     title="Text-to-Image Generator API",
@@ -22,7 +20,7 @@ async def generate_image_endpoint(request: ImageRequest):
             cfg_scale=request.cfg_scale
         )
         return StreamingResponse(
-            content=io.BytesIO(image_bytes),
+            io.BytesIO(image_bytes),
             media_type="image/png",
             headers={"Content-Disposition": f"attachment; filename=generated.png"}
         )
