@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
-from app.schemas import ImageRequest  # Абсолютный импорт
-from app.utils import generate_image   # Абсолютный импорт
+from app.schemas import ImageRequest  
+from app.utils import generate_image 
 import io
 
 app = FastAPI(
