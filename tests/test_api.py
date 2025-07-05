@@ -26,9 +26,9 @@ def test_generate_image_success(mock_gen):
 def test_invalid_input():
     payload = {
         "prompt": "",
-        "width": 2000,  # Превышение лимита
+        "width": 2000, 
         "height": 512,
-        "steps": 5,     # Ниже минимума
+        "steps": 5,   
         "cfg_scale": 25.0
     }
     response = client.post("/generate/", json=payload)
